@@ -7,6 +7,8 @@ authors = ["Egor Shestopalov <shestopalovegor@gmail.com>"]
 [tool.poetry.dependencies]
 python = "3.8.*"
 pre-commit = "^2.13.0"
+torch = "^1.8.1"
+SimpleITK = "^2.0.2"
 
 [tool.poetry.dev-dependencies]
 
