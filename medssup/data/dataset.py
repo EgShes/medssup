@@ -4,11 +4,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 import albumentations
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
-from torch.utils.data import Dataset
 
 from medssup.data.preprocessing import Preprocessing
 from medssup.data.volume import Volume
@@ -111,8 +109,8 @@ class CtichDataset:
         meta = {"study_id": row["patient_number"], "slice_id": row["slice_number"], "file_path": row["volume_path"]}
         label = self._get_labels(row)
 
-        volume = Volume(self._data_path / row["volume_path"], load_pixels=False)
-        mask_volume = Volume(self._data_path / row["mask_path"], load_pixels=False)
+        volume = Volume(self._data_path / row["volume_path"])
+        mask_volume = Volume(self._data_path / row["mask_path"])
         image = volume[int(row["slice_number"])]
         mask = mask_volume[int(row["slice_number"])]
         mask = self._preprocessing.normalize_mask(mask)
