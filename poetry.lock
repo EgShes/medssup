@@ -62,6 +62,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "einops"
+version = "0.3.0"
+description = "A new flavour of deep learning operations"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "filelock"
 version = "3.0.12"
 description = "A platform independent file lock."
@@ -398,10 +406,23 @@ six = ">=1.9.0,<2"
 docs = ["proselint (>=0.10.2)", "sphinx (>=3)", "sphinx-argparse (>=0.2.5)", "sphinx-rtd-theme (>=0.4.3)", "towncrier (>=19.9.0rc1)"]
 testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "packaging (>=20.0)", "xonsh (>=0.9.16)"]
 
+[[package]]
+name = "vit-pytorch"
+version = "0.19.6"
+description = "Vision Transformer (ViT) - Pytorch"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+einops = ">=0.3"
+torch = ">=1.6"
+torchvision = "*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.*"
-content-hash = "f8ff29505ad4f452cd0fc8033758773d76e3f461de8eba8180a8e9c8506dc066"
+content-hash = "1920b9d0d2c6307fc98e601b4a8eb647c7d6a4a2374c02e6312edcb7e5c27076"
 
 [metadata.files]
 albumentations = [
@@ -427,6 +448,10 @@ decorator = [
 distlib = [
     {file = "distlib-0.3.2-py2.py3-none-any.whl", hash = "sha256:23e223426b28491b1ced97dc3bbe183027419dfc7982b4fa2f05d5f3ff10711c"},
     {file = "distlib-0.3.2.zip", hash = "sha256:106fef6dc37dd8c0e2c0a60d3fca3e77460a48907f335fa28420463a6f799736"},
+]
+einops = [
+    {file = "einops-0.3.0-py2.py3-none-any.whl", hash = "sha256:a91c6190ceff7d513d74ca9fd701dfa6a1ffcdd98ea0ced14350197c07f75c73"},
+    {file = "einops-0.3.0.tar.gz", hash = "sha256:a3b0935a4556f012cd5fa1851373f63366890a3f6698d117afea55fd2a40c1fc"},
 ]
 filelock = [
     {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
@@ -815,4 +840,8 @@ typing-extensions = [
 virtualenv = [
     {file = "virtualenv-20.4.7-py2.py3-none-any.whl", hash = "sha256:2b0126166ea7c9c3661f5b8e06773d28f83322de7a3ff7d06f0aed18c9de6a76"},
     {file = "virtualenv-20.4.7.tar.gz", hash = "sha256:14fdf849f80dbb29a4eb6caa9875d476ee2a5cf76a5f5415fa2f1606010ab467"},
+]
+vit-pytorch = [
+    {file = "vit-pytorch-0.19.6.tar.gz", hash = "sha256:b1b186cbf02178fc288be02b2969f9d396f4092cd31e4f53a25d51a523e4ef39"},
+    {file = "vit_pytorch-0.19.6-py3-none-any.whl", hash = "sha256:760b8f21e6e5871adde10fdb538628a03af341e0b38a59f5ae7c96f957b59917"},
 ]
