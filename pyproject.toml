@@ -15,6 +15,8 @@ pandas = "^1.2.4"
 matplotlib = "^3.4.2"
 torchvision = "^0.9.1"
 vit-pytorch = "^0.19.6"
+tqdm = "^4.61.1"
+tensorboard = "^2.5.0"
 
 [tool.poetry.dev-dependencies]
 

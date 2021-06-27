@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import SimpleITK as sitk
 import torch
+from torch import Tensor
 from torch.utils.data import Dataset
 
 from medssup.data.preprocessing import Preprocessing
@@ -204,8 +205,8 @@ class RSNASiameseDataset(RSNADataset):
         annotation_path: Path,
         preprocessing: Preprocessing,
         augmentations: Optional[albumentations.Compose],
-        labels: List[str],
     ):
+        labels = ["Epidural", "Intraparenchymal", "Intraventricular", "Subarachnoid", "Subdural"]
         super().__init__(data_path, annotation_path, preprocessing, augmentations, labels, "binary")
         labels = self._annotation_df["Hemorrhage"]
         self._positive_indices = np.where(labels == 1)[0]
